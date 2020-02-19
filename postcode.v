@@ -81,23 +81,6 @@ module postcode
 	 *     ensure that the last byte is recognised.
 	 */
 	
-	// receive shift register -- data from the host
-	reg[7:0] rxshift;
-	wire rx_ready = rxready;
-	assign rxout = rxshift;
-	assign rxstrobe = tx_done;
-	
-	// transmit shift register -- data to the host
-	reg[7:0] txshift;
-	wire tx_ready = tx_pending;
-	wire tx_done;
-	assign tx_done = (state == S_INPUT_BIT0) & testreq;
-
-	
-
-	
-	
-	
 	// state machine
 	reg[4:0] state;
 	
@@ -114,6 +97,18 @@ module postcode
 	localparam S_INPUT_BIT2	= 5'd10;
 	localparam S_INPUT_BIT1	= 5'd11;
 	localparam S_INPUT_BIT0	= 5'd12;
+	
+	// transmit shift register -- data to the host
+	reg[7:0] txshift;
+	wire tx_ready = tx_pending;
+	wire tx_done;
+	assign tx_done = (state == S_INPUT_BIT0) & testreq;
+	
+	// receive shift register -- data from the host
+	reg[7:0] rxshift;
+	wire rx_ready = rxready;
+	assign rxout = rxshift;
+	assign rxstrobe = tx_done;
 	
 	always @(posedge timer_expired) begin
 		// Timer expiry -- shift in any data bits which were sent

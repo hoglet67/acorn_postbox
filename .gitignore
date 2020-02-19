@@ -7,3 +7,6 @@
 db/
 incremental_db/
 output_files/
+iseconfig/
+not_in_git/
+working/
