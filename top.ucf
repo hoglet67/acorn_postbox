@@ -1,12 +1,12 @@
 NET "DIL_1_GCK" LOC="P1" ; # ref clk  - connect to a 12MHz Oscillator
 NET "DIL_2_GCK" LOC="P2" ; # test req - connect to Test Connector Pin 3
 NET "DIL_3"     LOC="P3" ; # test ack - connect to Test Connector Pin 4
-NET "DIL_22"    LOC="P13"; # LCD E
-NET "DIL_23"    LOC="P16"; # LCD RS
-NET "DIL_24"    LOC="P12"; # LCD DQ0
-NET "DIL_25"    LOC="P8" ; # LCD DQ1
-NET "DIL_26"    LOC="P7" ; # LCD DQ2
-NET "DIL_27"    LOC="P6" ; # LCD DQ3
+NET "DIL_22"    LOC="P20"; # LCD E
+NET "DIL_23"    LOC="P19"; # LCD RS
+NET "DIL_24"    LOC="P28"; # LCD DQ0
+NET "DIL_25"    LOC="P29"; # LCD DQ1
+NET "DIL_26"    LOC="P30"; # LCD DQ2
+NET "DIL_27"    LOC="P31"; # LCD DQ3
 
 NET "DIL_2"     LOC="P38"; # not used
 NET "DIL_1"     LOC="P37"; # not used
